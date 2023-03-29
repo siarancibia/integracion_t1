@@ -13,7 +13,27 @@
       </div>
   
       <div class="content">
-        <b>Descripción del menú:</b> {{tray.description}}
+        <b>Menú:</b> {{tray.description}}
       </div>
     </div>
   </div>
+
+<div>
+    <tr *ngFor="let item of tray.courses">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src={{item.img_url}}>
+                </figure>
+              </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-4">{{item.name}}</p>
+                  <p class="subtitle is-6">{{item.category}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </tr>
+</div>
