@@ -12,6 +12,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
 import { TrayPageComponent } from './tray-page/tray-page.component';
 import { CoursePageComponent } from './course-page/course-page.component';
+import { IngredientPageComponent } from './ingredient-page/ingredient-page.component';
+import { CourseHomeComponent } from './course-home/course-home.component';
+import { IngredientHomeComponent } from './ingredient-home/ingredient-home.component';
 
 
 
@@ -21,7 +24,10 @@ import { CoursePageComponent } from './course-page/course-page.component';
     HeaderComponent,
     HomeComponent,
     TrayPageComponent,
-    CoursePageComponent
+    CoursePageComponent,
+    IngredientPageComponent,
+    CourseHomeComponent,
+    IngredientHomeComponent
   ],
   imports: [
     BrowserModule,

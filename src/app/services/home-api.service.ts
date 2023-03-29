@@ -22,6 +22,18 @@ export class HomeApiService {
     return this.http.get(apiUrl_trays,{headers:trays_recibidas})
   }
 
+  getCourses(){
+    let courses_recibidos = new HttpHeaders().set('Type-content', 'application/json')
+    let apiUrl_courses = `${this.apiUrl}/courses`;
+    return this.http.get(apiUrl_courses,{headers:courses_recibidos})
+  }
+
+  getIngredients(){
+    let ingredients_recibidos = new HttpHeaders().set('Type-content', 'application/json')
+    let apiUrl_ingredients = `${this.apiUrl}/ingredients`;
+    return this.http.get(apiUrl_ingredients,{headers:ingredients_recibidos})
+  }
+
   getSingularTray(tray_id: any){
     let tray_recibida = new HttpHeaders().set('Type-content', 'application/json')
     let apiUrl_id = `${this.apiUrl}/trays/${tray_id}`;
@@ -34,6 +46,12 @@ export class HomeApiService {
     let course_recibido = new HttpHeaders().set('Type-content', 'application/json')
     let apiUrl_id = `${this.apiUrl}/courses/${course_id}`;
     return this.http.get(apiUrl_id,{headers:course_recibido})
+  }
+
+  getSingularIngredient(ingredient_id: any){
+    let ingredient_recibido = new HttpHeaders().set('Type-content', 'application/json')
+    let apiUrl_id = `${this.apiUrl}/ingredients/${ingredient_id}`;
+    return this.http.get(apiUrl_id,{headers:ingredient_recibido})
   }
 
 
