@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeApiService } from '../services/home-api.service'
 import { PaginatePipe } from 'ngx-pagination/public-api';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,7 @@ import { PaginatePipe } from 'ngx-pagination/public-api';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent { 
+  searchTerm: string = '';
   itemsPerPage=10;
   currentPage=1;
   public trays:Array<any>=[]
@@ -34,6 +36,10 @@ export class HomeComponent {
       this.trays.sort((a, b) => b.price - a.price);
     }
 
+  }
+
+  performSearch(){
+    console.log('Searching for: ', this.searchTerm);
   }
     
 

@@ -12,7 +12,16 @@
         <a class="button" (click)="sortTable('price', 'desc')">Sort by Price (desc)</a>
     </div>
     <div class="column">
-        <input type="text" placeholder="Search...">
+        <div class="field has-addons">
+            <div class="control">
+              <input class="input" type="text" placeholder="Ingredients, courses, etc" [(ngModel)]="searchTerm">
+            </div>
+            <div class="control">
+              <a class="button is-info" (click)="performSearch()">
+                Search
+              </a>
+            </div>
+          </div>
     </div>
 </div>
 
@@ -25,7 +34,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of trays | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage}">
-        <td ><a href="/trays/{{item.id}}">{{ item.name }}</a></td>
+        <td ><a routerLink="/trays/{{item.id}}">{{ item.name }}</a></td>
         <td>${{ item.price }}</td>
       </tr>
     </tbody>
