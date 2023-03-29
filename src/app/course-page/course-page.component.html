@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card-image">
+        <figure class="image is-4by3">
+          <img src={{course.img_url}}>
+        </figure>
+      </div>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4">{{course.name}}</p>
+          <b>Cat: {{course.category}} </b> 
+          <b>Exp: {{course.expiration}} </b>
+          <b>Price: {{course.price}} </b>
+          <b>Size: {{course.size}} </b>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div>
+    <tr *ngFor="let item of course.ingredients">
+        <div class="card">
+            <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src={{item.img_url}}>
+                </figure>
+              </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                    <p class="title is-4"><a routerLink="/ingredients/{{item.id}}">{{item.name}}</a></p>
+                    <p class="subtitle ">Qty: {{item.quantity}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </tr>
+</div>

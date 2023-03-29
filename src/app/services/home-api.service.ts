@@ -30,5 +30,11 @@ export class HomeApiService {
     return this.http.get(apiUrl_id,{headers:tray_recibida})
   }
 
+  getSingularCourse(course_id: any){
+    let course_recibido = new HttpHeaders().set('Type-content', 'application/json')
+    let apiUrl_id = `${this.apiUrl}/courses/${course_id}`;
+    return this.http.get(apiUrl_id,{headers:course_recibido})
+  }
+
 
 }
