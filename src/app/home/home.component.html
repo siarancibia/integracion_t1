@@ -1,3 +1,21 @@
+<div class="columns">
+    <div class="column">
+        <a class="button" (click)="sortTable('name', 'asc')">Sort by Name (asc)</a>
+    </div>
+    <div class="column">
+        <a class="button" (click)="sortTable('name', 'desc')">Sort by Name (desc)</a>
+    </div>
+    <div class="column">
+        <a class="button" (click)="sortTable('price', 'asc')">Sort by Price (asc)</a>
+    </div>
+    <div class="column">
+        <a class="button" (click)="sortTable('price', 'desc')">Sort by Price (desc)</a>
+    </div>
+    <div class="column">
+        <input type="text" placeholder="Search...">
+    </div>
+</div>
+
 <table class="table is-hoverable is-fullwidth">
     <thead>
       <tr>

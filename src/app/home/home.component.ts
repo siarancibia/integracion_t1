@@ -22,6 +22,19 @@ export class HomeComponent {
     })
 
   }
+
+  sortTable(columnName: string, order: string) {
+    if (order === 'asc' && columnName === 'name') {
+      this.trays.sort((a, b) => a[columnName].localeCompare(b[columnName]));
+    } else if (order === 'desc'&& columnName === 'name') {
+      this.trays.sort((a, b) => b[columnName].localeCompare(a[columnName]));
+    } else if (order === 'asc'&& columnName === 'price') {
+      this.trays.sort((a, b) => a.price - b.price);
+    } else if (order === 'desc'&& columnName === 'price') {
+      this.trays.sort((a, b) => b.price - a.price);
+    }
+
+  }
     
 
 }
