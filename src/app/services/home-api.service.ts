@@ -54,5 +54,20 @@ export class HomeApiService {
     return this.http.get(apiUrl_id,{headers:ingredient_recibido})
   }
 
+  getReviews(entity_id: any){
+    let reviews_recibidos = new HttpHeaders().set('Type-content', 'application/json')
+    let apiUrl_id = `${this.apiUrl}/reviews/${entity_id}`;
+    console.log('esta es la url con que se realiza la solicitud');
+    console.log(apiUrl_id);
+    return this.http.get(apiUrl_id,{headers:reviews_recibidos})
+  }
+
+  postSingularReview(review: any) {
+    let apiUrl_id = `${this.apiUrl}reviews`;
+    console.log('Este es el review que se posteara:', review);
+    console.log('Esta es la URL con que se realiza la solicitud:', apiUrl_id);
+    
+    return this.http.post(apiUrl_id, review);
+  }
 
 }
