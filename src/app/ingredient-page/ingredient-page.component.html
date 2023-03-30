@@ -17,6 +17,21 @@
     </div>
 </div>
 
+<div class="columns">
+  <div class="column">
+      <a class="button" (click)="sortReviews('username', 'asc')">Sort by Name (asc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('username', 'desc')">Sort by Name (desc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('date', 'asc')">Sort by Date (asc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('date', 'desc')">Sort by Date (desc)</a>
+  </div>
+</div>
+
 <div>
   <tr *ngFor="let item of reviews">
       <div class="card">

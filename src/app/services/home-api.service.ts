@@ -8,7 +8,7 @@ import { HomeComponent } from '../home/home.component';
 export class HomeApiService {
 
   // Define the URL of the API endpoint that retrieves trays
-  private apiUrl = 'https://tarea-1.2023-1.tallerdeintegracion.cl/';
+  private apiUrl = 'https://tarea-1.2023-1.tallerdeintegracion.cl';
 
   constructor(
     private http: HttpClient
@@ -63,10 +63,7 @@ export class HomeApiService {
   }
 
   postSingularReview(review: any) {
-    let apiUrl_id = `${this.apiUrl}reviews`;
-    console.log('Este es el review que se posteara:', review);
-    console.log('Esta es la URL con que se realiza la solicitud:', apiUrl_id);
-    
+    let apiUrl_id = `${this.apiUrl}/reviews`;
     return this.http.post(apiUrl_id, review);
   }
 

@@ -39,6 +39,19 @@ export class IngredientPageComponent {
     })
   }
 
+  sortReviews(columnName: string, order: string) {
+    if (order === 'asc' && columnName === 'username') {
+      this.reviews.sort((a: { [x: string]: string; }, b: { [x: string]: any; }) => a[columnName].localeCompare(b[columnName]));
+    } else if (order === 'desc'&& columnName === 'username') {
+      this.reviews.sort((a: { [x: string]: any; }, b: { [x: string]: string; }) => b[columnName].localeCompare(a[columnName]));
+    } else if (order === 'asc'&& columnName === 'date') {
+      this.reviews.sort((a: { [x: string]: any; }, b: { [x: string]: string; }) => a[columnName].localeCompare(b[columnName]));
+    } else if (order === 'desc'&& columnName === 'date') {
+      this.reviews.sort((a: { [x: string]: any; }, b: { [x: string]: string; }) => b[columnName].localeCompare(a[columnName]));
+    }
+
+  }
+
   postReview(){
     this.activatedRoute.params.subscribe((params:any)=>{
       this.formData['entity_id'] = params['id']

@@ -37,3 +37,89 @@
           </div>
       </tr>
 </div>
+
+<div class="columns">
+  <div class="column">
+      <a class="button" (click)="sortReviews('username', 'asc')">Sort by Name (asc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('username', 'desc')">Sort by Name (desc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('date', 'asc')">Sort by Date (asc)</a>
+  </div>
+  <div class="column">
+      <a class="button" (click)="sortReviews('date', 'desc')">Sort by Date (desc)</a>
+  </div>
+</div>
+
+<div>
+  <tr *ngFor="let item of reviews">
+      <div class="card">
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="https://ifpo.org.uk/wp-content/uploads/2020/10/cropped-9-93879_computer-icons-user-image-person-silhouette-user-silhouettes.png" >
+                </figure>
+              </div>
+              <div class="media-content">
+                  <p class="title is-4">{{item.username}}</p>
+                  <p class="subtitle ">{{item.content}}</p>
+                  <p class="subtitle ">Score: {{item.rating}}</p>
+                  <p class="subtitle ">Date: {{item.date}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </tr>
+</div>
+
+<p class="title">Post new Review</p>
+<form id="reviewForm" (submit)="postReview()">
+  <div class="field">
+    <label class="label">Email</label>
+    <div class="control">
+      <input class="input" type="text" [(ngModel)]="formData.email" placeholder="Enter your email" name="email">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Password</label>
+    <div class="control">
+      <input class="input" type="password" [(ngModel)]="formData.password" placeholder="Enter your password" name="password">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Score</label>
+    <div class="control">
+      <div class="select">
+        <select name="score" [(ngModel)]="formData.rating">
+          <option>Select score</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Review</label>
+    <div class="control">
+      <textarea class="textarea" placeholder="Enter your review" [(ngModel)]="formData.content" name="review"></textarea>
+    </div>
+  </div>
+
+  <div class="field is-grouped">
+    <div class="control">
+      <button class="button is-link" type="submit">Submit</button>
+    </div>
+    <div class="control">
+      <button class="button is-link is-light" type="reset">Cancel</button>
+    </div>
+  </div>
+</form>
